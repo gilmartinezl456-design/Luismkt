@@ -8,66 +8,51 @@ import { WaveBackground } from '@/src/components/ui/wave-background';
 const Home = () => {
   return (
     <div className="overflow-hidden">
-      {/* 1. HERO SECTION - WAVE BACKGROUND */}
-      <WaveBackground className="min-h-screen flex items-center pt-20">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch relative z-10 w-full">
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="bg-white/90 backdrop-blur-sm py-20 lg:py-32 pr-0 lg:pr-20 flex flex-col justify-center p-12 lg:p-20"
-          >
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-[2px] bg-brand-red"></div>
-              <span className="text-xs font-bold uppercase tracking-[0.3em] text-brand-red">Estrategia de Negocio</span>
-            </div>
-            <h1 className="text-6xl lg:text-8xl font-bold text-brand-navy leading-[0.9] mb-10 text-balance">
-              Agenda llena <br/>
-              <span className="text-brand-red">≠</span> <br/>
-              Negocio estable.
-            </h1>
-            <p className="text-xl text-brand-navy/70 mb-12 leading-relaxed max-w-lg">
-              Muchos entrenadores trabajan más cada año, pero su negocio sigue dependiendo de vender sesiones constantemente.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6">
-              <Link to="/diagnostico">
-                <InteractiveHoverButton text="Solicitar diagnóstico" className="w-full sm:w-auto" />
-              </Link>
-              <Link to="/sobre-nosotros" className="group flex items-center gap-3 font-bold uppercase tracking-widest text-sm hover:text-brand-red transition-colors">
-                Nuestro Método <div className="w-8 h-[2px] bg-brand-navy group-hover:bg-brand-red transition-colors"></div>
-              </Link>
-            </div>
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="relative hidden lg:flex items-center justify-center p-20"
-          >
-            <div className="relative w-full aspect-[4/5] overflow-hidden group shadow-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=1000" 
-                alt="Entrenador profesional" 
-                className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-1000 scale-110 group-hover:scale-100"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-brand-navy/20 mix-blend-multiply group-hover:bg-transparent transition-all duration-700"></div>
-              
-              {/* Floating Stat Card */}
-              <motion.div 
-                initial={{ y: 40, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 1, duration: 0.8 }}
-                className="absolute bottom-10 left-10 right-10 glass-panel p-8"
-              >
-                <p className="text-brand-navy font-bold text-3xl mb-1">+40%</p>
-                <p className="text-brand-navy/60 text-sm uppercase tracking-widest font-bold">Incremento en estabilidad mensual</p>
-              </motion.div>
-            </div>
-          </motion.div>
+      {/* 1. HERO SECTION - FULL SCREEN IMAGE */}
+      <section className="relative h-screen w-full overflow-hidden">
+        {/* Background Image Layer */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=1920" 
+            alt="Entrenador profesional" 
+            className="w-full h-full object-cover grayscale brightness-[0.25]"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/60 to-transparent"></div>
         </div>
-      </WaveBackground>
+
+        <WaveBackground className="h-full flex items-center bg-transparent!">
+          <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="max-w-3xl"
+            >
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-[2px] bg-brand-red"></div>
+                <span className="text-xs font-bold uppercase tracking-[0.3em] text-brand-red">Estrategia de Negocio</span>
+              </div>
+              <h1 className="text-6xl lg:text-9xl font-bold text-white leading-[0.85] mb-10 tracking-tighter">
+                Agenda llena <br/>
+                <span className="text-brand-red italic serif font-light">no es</span> <br/>
+                Negocio estable.
+              </h1>
+              <p className="text-xl text-gray-300 mb-12 leading-relaxed max-w-xl">
+                Muchos entrenadores trabajan más cada año, pero su negocio sigue dependiendo de vender sesiones constantemente. Transformamos tu esfuerzo en una estructura sólida.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6">
+                <Link to="/diagnostico">
+                  <InteractiveHoverButton text="Solicitar diagnóstico" className="w-full sm:w-auto" />
+                </Link>
+                <Link to="/sobre-nosotros" className="group flex items-center gap-3 font-bold uppercase tracking-widest text-sm text-white hover:text-brand-red transition-colors">
+                  Nuestro Método <div className="w-8 h-[2px] bg-white group-hover:bg-brand-red transition-colors"></div>
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </WaveBackground>
+      </section>
 
       {/* 2. EL PROBLEMA - BENTO STYLE */}
       <section className="section-padding">
