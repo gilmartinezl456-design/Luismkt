@@ -25,9 +25,9 @@ const SobreNosotros = () => {
         </div>
         <div className="relative">
           <img 
-            src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800" 
-            alt="Equipo de consultoría" 
-            className="w-full h-[600px] object-cover shadow-2xl"
+            src="https://enlizboqeqximxogepig.supabase.co/storage/v1/object/sign/LuisMKT%20sin%20marco/imagen%20sin%20marco%20LuisMKT.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83NWNhYTVkMy00MTc0LTQ4MDMtYThkMy0xODkxYzMzYTRmOGIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJMdWlzTUtUIHNpbiBtYXJjby9pbWFnZW4gc2luIG1hcmNvIEx1aXNNS1QucG5nIiwiaWF0IjoxNzczODU1MzE0LCJleHAiOjE4MDUzOTEzMTR9.f1sDM8SniDW_d51TfctcxqUQQvK3xa_1qNm3ySgEEdY" 
+            alt="Luis MKT" 
+            className="w-full h-[600px] object-cover shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
             referrerPolicy="no-referrer"
           />
           <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-brand-red -z-10"></div>
