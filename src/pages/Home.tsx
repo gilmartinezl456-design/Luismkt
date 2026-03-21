@@ -13,12 +13,12 @@ const Home = () => {
         {/* Background Image Layer */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://enlizboqeqximxogepig.supabase.co/storage/v1/object/sign/LuisMKT%20sin%20marco/imagen%20sin%20marco%20LuisMKT.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83NWNhYTVkMy00MTc0LTQ4MDMtYThkMy0xODkxYzMzYTRmOGIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJMdWlzTUtUIHNpbiBtYXJjby9pbWFnZW4gc2luIG1hcmNvIEx1aXNNS1QucG5nIiwiaWF0IjoxNzczODU1MzE0LCJleHAiOjE4MDUzOTEzMTR9.f1sDM8SniDW_d51TfctcxqUQQvK3xa_1qNm3ySgEEdY" 
-            alt="Luis MKT" 
-            className="w-full h-full object-cover grayscale brightness-[0.4]"
+            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=2000" 
+            alt="Entrenamiento de Alto Rendimiento" 
+            className="w-full h-full object-cover grayscale brightness-[0.3]"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/60 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/80 to-transparent"></div>
         </div>
 
         <WaveBackground className="h-full flex items-center bg-transparent!">
@@ -42,9 +42,9 @@ const Home = () => {
                 Muchos entrenadores trabajan más cada año, pero su negocio sigue dependiendo de vender sesiones constantemente. Transformamos tu esfuerzo en una estructura sólida.
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
-                <Link to="/diagnostico">
+                <a href="https://tally.so/r/b5O1MZ" target="_blank" rel="noopener noreferrer">
                   <InteractiveHoverButton text="Solicitar diagnóstico" className="w-full sm:w-auto" />
-                </Link>
+                </a>
                 <Link to="/sobre-nosotros" className="group flex items-center gap-3 font-bold uppercase tracking-widest text-sm text-white hover:text-brand-red transition-colors">
                   Nuestro Método <div className="w-8 h-[2px] bg-white group-hover:bg-brand-red transition-colors"></div>
                 </Link>
@@ -103,9 +103,9 @@ const Home = () => {
               <h2 className="text-4xl lg:text-6xl font-bold text-brand-navy mb-6">Sistemas de Alto Rendimiento</h2>
               <p className="text-xl text-brand-navy/60">Transformamos la fragilidad en una estructura de negocio sólida y predecible.</p>
             </div>
-            <Link to="/diagnostico" className="text-brand-red font-bold uppercase tracking-widest text-sm flex items-center gap-2 hover:gap-4 transition-all">
+            <a href="https://tally.so/r/b5O1MZ" target="_blank" rel="noopener noreferrer" className="text-brand-red font-bold uppercase tracking-widest text-sm flex items-center gap-2 hover:gap-4 transition-all">
               Ver todos los servicios <ArrowRight size={16} />
-            </Link>
+            </a>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
@@ -118,9 +118,9 @@ const Home = () => {
                 <div className="text-brand-red mb-8">{item.icon}</div>
                 <h3 className="text-2xl font-bold mb-6">{item.t}</h3>
                 <p className="text-brand-navy/60 leading-relaxed mb-8">{item.d}</p>
-                <Link to="/diagnostico" className="text-xs font-bold uppercase tracking-widest text-brand-navy hover:text-brand-red transition-colors flex items-center gap-2">
+                <a href="https://tally.so/r/b5O1MZ" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-widest text-brand-navy hover:text-brand-red transition-colors flex items-center gap-2">
                   Saber más <ArrowRight size={14} />
-                </Link>
+                </a>
               </div>
             ))}
           </div>
@@ -175,9 +175,9 @@ const Home = () => {
             <p className="text-xl text-gray-400 mb-16 max-w-2xl mx-auto">
               El primer paso es un diagnóstico real. Analizamos tus números para evaluar si tiene sentido trabajar juntos.
             </p>
-            <Link to="/diagnostico">
+            <a href="https://tally.so/r/b5O1MZ" target="_blank" rel="noopener noreferrer">
               <InteractiveHoverButton text="Solicitar diagnóstico gratuito" className="w-full sm:w-auto" />
-            </Link>
+            </a>
           </motion.div>
         </div>
       </WaveBackground>

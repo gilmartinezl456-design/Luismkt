@@ -72,9 +72,9 @@ const Contacto = () => {
             <p className="text-gray-400 mb-10 leading-relaxed">
               Realiza nuestro análisis clínico de negocio para obtener una hoja de ruta personalizada hacia la estabilidad financiera.
             </p>
-            <Link to="/diagnostico" className="inline-block w-full">
+            <a href="https://tally.so/r/b5O1MZ" target="_blank" rel="noopener noreferrer" className="inline-block w-full">
               <InteractiveHoverButton text="Comenzar análisis" className="w-full" />
-            </Link>
+            </a>
           </div>
         </div>
       </section>

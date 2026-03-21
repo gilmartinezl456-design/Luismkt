@@ -42,7 +42,7 @@ const Header = () => {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center space-x-8">
           <Link to="/" className="nav-link">Home</Link>
-          <Link to="/diagnostico" className="nav-link font-bold text-brand-red">Diagnóstico</Link>
+          <a href="https://tally.so/r/b5O1MZ" target="_blank" rel="noopener noreferrer" className="nav-link font-bold text-brand-red">Diagnóstico</a>
           
           <div className="relative group" onMouseEnter={() => setShowServices(true)} onMouseLeave={() => setShowServices(false)}>
             <button className="nav-link flex items-center gap-1 cursor-pointer">
@@ -81,9 +81,9 @@ const Header = () => {
             </a>
           </div>
 
-          <Link to="/diagnostico" className="cta-button text-sm">
+          <a href="https://tally.so/r/b5O1MZ" target="_blank" rel="noopener noreferrer" className="cta-button text-sm">
             Solicitar diagnóstico
-          </Link>
+          </a>
         </nav>
 
         {/* Mobile Toggle */}
@@ -103,7 +103,7 @@ const Header = () => {
           >
             <div className="px-6 py-8 flex flex-col space-y-6">
               <Link to="/" className="text-xl font-medium text-brand-navy">Home</Link>
-              <Link to="/diagnostico" className="text-xl font-bold text-brand-red">Diagnóstico</Link>
+              <a href="https://tally.so/r/b5O1MZ" target="_blank" rel="noopener noreferrer" className="text-xl font-bold text-brand-red">Diagnóstico</a>
               <div className="space-y-4 pl-4 border-l-2 border-brand-gray">
                 <p className="text-sm uppercase tracking-widest text-gray-400 font-bold">Servicios</p>
                 {services.map((s) => (
@@ -114,9 +114,9 @@ const Header = () => {
               </div>
               <Link to="/sobre-nosotros" className="text-xl font-medium text-brand-navy">Sobre Nosotros</Link>
               <Link to="/contacto" className="text-xl font-medium text-brand-navy">Contacto</Link>
-              <Link to="/diagnostico" className="cta-button w-full">
+              <a href="https://tally.so/r/b5O1MZ" target="_blank" rel="noopener noreferrer" className="cta-button w-full">
                 Solicitar diagnóstico
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}
@@ -148,7 +148,7 @@ const Footer = () => {
           <h4 className="font-bold mb-6 uppercase tracking-widest text-xs text-brand-red">Mapa del sitio</h4>
           <ul className="space-y-4 text-sm text-gray-300">
             <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
-            <li><Link to="/diagnostico" className="hover:text-white transition-colors">Diagnóstico</Link></li>
+            <li><a href="https://tally.so/r/b5O1MZ" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Diagnóstico</a></li>
             <li><Link to="/servicios/ingresos-estables" className="hover:text-white transition-colors">Ingresos Estables</Link></li>
             <li><Link to="/sobre-nosotros" className="hover:text-white transition-colors">Sobre Nosotros</Link></li>
           </ul>
