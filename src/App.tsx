@@ -2,9 +2,10 @@ import React from 'react';
 import { Layout } from './components/Layout';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import IngresosEstables from './pages/IngresosEstables';
-import CaptacionPredecible from './pages/CaptacionPredecible';
-import Implementacion from './pages/Implementacion';
+import MarketingEstrategico from './pages/MarketingEstrategico';
+import PublicidadAds from './pages/PublicidadAds';
+import PaginaWeb from './pages/PaginaWeb';
+import AutomatizacionBot from './pages/AutomatizacionBot';
 import SobreNosotros from './pages/SobreNosotros';
 import Contacto from './pages/Contacto';
 
@@ -14,9 +15,10 @@ export default function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/servicios/ingresos-estables" element={<IngresosEstables />} />
-          <Route path="/servicios/captacion-predecible" element={<CaptacionPredecible />} />
-          <Route path="/servicios/implementacion" element={<Implementacion />} />
+          <Route path="/servicios/marketing-estrategico" element={<MarketingEstrategico />} />
+          <Route path="/servicios/publicidad-ads" element={<PublicidadAds />} />
+          <Route path="/servicios/pagina-web" element={<PaginaWeb />} />
+          <Route path="/servicios/automatizacion-bot" element={<AutomatizacionBot />} />
           <Route path="/sobre-nosotros" element={<SobreNosotros />} />
           <Route path="/contacto" element={<Contacto />} />
         </Routes>

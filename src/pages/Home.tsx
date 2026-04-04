@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, TrendingUp, Megaphone, Settings, User, Star, Building2, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, TrendingUp, Megaphone, Settings, User, Star, Building2, CheckCircle2, Brain, Globe, Bot } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { InteractiveHoverButton } from '@/src/components/ui/interactive-hover-button';
 import { WaveBackground } from '@/src/components/ui/wave-background';
@@ -100,29 +100,56 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <div className="max-w-2xl">
-              <h2 className="text-4xl lg:text-6xl font-bold text-brand-navy mb-6">Sistemas de Alto Rendimiento</h2>
-              <p className="text-xl text-brand-navy/60">Transformamos la fragilidad en una estructura de negocio sólida y predecible.</p>
+              <h2 className="text-4xl lg:text-6xl font-bold text-brand-navy mb-6">Servicios que apoyan el crecimiento de tu negocio</h2>
+              <p className="text-xl text-brand-navy/60">Una vez tu modelo está bien estructurado, estos sistemas te ayudan a crecer con más control, eficiencia y menos carga operativa.</p>
             </div>
-            <a href="https://tally.so/r/b5O1MZ" target="_blank" rel="noopener noreferrer" className="text-brand-red font-bold uppercase tracking-widest text-sm flex items-center gap-2 hover:gap-4 transition-all">
-              Ver todos los servicios <ArrowRight size={16} />
-            </a>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
             {[
-              { icon: <TrendingUp size={32} />, t: "Ingresos Estables", d: "Pasar de vender sesiones sueltas a operar con una base de ingresos recurrentes." },
-              { icon: <Megaphone size={32} />, t: "Captación Predecible", d: "Generar conversaciones de venta semanales con clientes cualificados sin depender del azar." },
-              { icon: <Settings size={32} />, t: "Implementación Real", d: "Configuración de cobros automáticos y migración de clientes al nuevo sistema." }
+              { icon: <Brain size={32} />, t: "Marketing estratégico", d: "Definimos el mensaje adecuado para que atraigas clientes que encajan con tu modelo y estén dispuestos a pagar por él.", path: "/servicios/marketing-estrategico" },
+              { icon: <Megaphone size={32} />, t: "Publicidad (Ads)", d: "Una vez tienes un sistema claro, la publicidad permite acelerar la entrada de nuevos clientes. Es amplificación.", path: "/servicios/publicidad-ads" },
+              { icon: <Globe size={32} />, t: "Página Web", d: "Tu web no está para 'verse bonita'. Está para convertir visitas en oportunidades reales con una estructura clara.", path: "/servicios/pagina-web" },
+              { icon: <Bot size={32} />, t: "Automatización (Bot)", d: "Implementamos sistemas que responden, filtran y organizan los contactos automáticamente para no perder oportunidades.", path: "/servicios/automatizacion-bot" }
             ].map((item, i) => (
               <div key={i} className="card-modern">
                 <div className="text-brand-red mb-8">{item.icon}</div>
                 <h3 className="text-2xl font-bold mb-6">{item.t}</h3>
-                <p className="text-brand-navy/60 leading-relaxed mb-8">{item.d}</p>
-                <a href="https://tally.so/r/b5O1MZ" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-widest text-brand-navy hover:text-brand-red transition-colors flex items-center gap-2">
+                <p className="text-brand-navy/60 leading-relaxed mb-8 h-24 overflow-hidden">{item.d}</p>
+                <Link to={item.path} className="text-xs font-bold uppercase tracking-widest text-brand-navy hover:text-brand-red transition-colors flex items-center gap-2">
                   Saber más <ArrowRight size={14} />
-                </a>
+                </Link>
               </div>
             ))}
+          </div>
+
+          {/* BLOQUE FINAL - POSICIONAMIENTO */}
+          <div className="mt-32 bg-brand-navy p-12 lg:p-20 text-white relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-8 opacity-10">
+              <TrendingUp size={200} />
+            </div>
+            <div className="relative z-10 max-w-3xl">
+              <span className="text-brand-red font-bold uppercase tracking-[0.4em] text-xs mb-6 block">Posicionamiento</span>
+              <h3 className="text-3xl lg:text-5xl font-bold mb-8">Antes de todo esto, va lo importante</h3>
+              <p className="text-xl text-gray-400 mb-10 leading-relaxed">
+                Estos sistemas no sustituyen un buen modelo de negocio. Primero construimos una base sólida:
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {[
+                  "Ingresos estables",
+                  "Estructura clara",
+                  "Control del negocio"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3 bg-white/5 p-4 border border-white/10">
+                    <CheckCircle2 className="text-brand-red" size={20} />
+                    <span className="font-bold text-sm uppercase tracking-wider">{item}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-10 text-gray-400 italic">
+                Después, si tiene sentido, utilizamos estas herramientas para crecer.
+              </p>
+            </div>
           </div>
         </div>
       </section>

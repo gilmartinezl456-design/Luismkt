@@ -21,9 +21,10 @@ const Header = () => {
   }, [location]);
 
   const services = [
-    { name: 'Ingresos Estables', path: '/servicios/ingresos-estables' },
-    { name: 'Captación Predecible', path: '/servicios/captacion-predecible' },
-    { name: 'Implementación', path: '/servicios/implementacion' },
+    { name: 'Marketing Estratégico', path: '/servicios/marketing-estrategico' },
+    { name: 'Publicidad (Ads)', path: '/servicios/publicidad-ads' },
+    { name: 'Página Web', path: '/servicios/pagina-web' },
+    { name: 'Automatización (Bot)', path: '/servicios/automatizacion-bot' },
   ];
 
   return (
@@ -149,7 +150,7 @@ const Footer = () => {
           <ul className="space-y-4 text-sm text-gray-300">
             <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
             <li><a href="https://tally.so/r/b5O1MZ" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Diagnóstico</a></li>
-            <li><Link to="/servicios/ingresos-estables" className="hover:text-white transition-colors">Ingresos Estables</Link></li>
+            <li><Link to="/servicios/marketing-estrategico" className="hover:text-white transition-colors">Servicios</Link></li>
             <li><Link to="/sobre-nosotros" className="hover:text-white transition-colors">Sobre Nosotros</Link></li>
           </ul>
         </div>
