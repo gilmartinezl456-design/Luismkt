@@ -35,13 +35,13 @@ const Contacto = () => {
             </div>
 
             <div className="space-y-8">
-              <a href="mailto:gilmartinezl456@gmail.com" className="flex items-center gap-6 group">
+              <a href="mailto:luismkt2026@gmail.com" className="flex items-center gap-6 group">
                 <div className="w-16 h-16 bg-brand-gray flex items-center justify-center group-hover:bg-brand-red group-hover:text-white transition-all">
                   <Mail size={24} />
                 </div>
                 <div>
                   <p className="text-xs font-bold uppercase tracking-widest text-brand-red mb-1">Email</p>
-                  <p className="text-xl font-bold text-brand-navy">gilmartinezl456@gmail.com</p>
+                  <p className="text-xl font-bold text-brand-navy">luismkt2026@gmail.com</p>
                 </div>
               </a>
 

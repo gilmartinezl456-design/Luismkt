@@ -71,10 +71,10 @@ const Header = () => {
           <Link to="/contacto" className="nav-link">Contacto</Link>
           
           <div className="flex items-center gap-4 mr-2">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-brand-navy/70 hover:text-brand-red transition-colors">
+            <a href="https://www.instagram.com/luismkt2026" target="_blank" rel="noopener noreferrer" className="text-brand-navy/70 hover:text-brand-red transition-colors">
               <Instagram size={20} />
             </a>
-            <a href="mailto:gilmartinezl456@gmail.com" className="text-brand-navy/70 hover:text-brand-red transition-colors">
+            <a href="mailto:luismkt2026@gmail.com" className="text-brand-navy/70 hover:text-brand-red transition-colors">
               <Mail size={20} />
             </a>
             <a href="https://wa.me/34652426328" target="_blank" rel="noopener noreferrer" className="text-brand-navy/70 hover:text-brand-red transition-colors">
@@ -160,7 +160,7 @@ const Footer = () => {
           <ul className="space-y-4 text-sm text-gray-300">
             <li className="flex items-center gap-3">
               <Mail size={16} className="text-brand-red" /> 
-              <a href="mailto:gilmartinezl456@gmail.com" className="hover:text-white transition-colors">gilmartinezl456@gmail.com</a>
+              <a href="mailto:luismkt2026@gmail.com" className="hover:text-white transition-colors">luismkt2026@gmail.com</a>
             </li>
             <li className="flex items-center gap-3">
               <Phone size={16} className="text-brand-red" /> 
@@ -176,10 +176,10 @@ const Footer = () => {
         <div>
           <h4 className="font-bold mb-6 uppercase tracking-widest text-xs text-brand-red">Síguenos</h4>
           <div className="flex space-x-4">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-brand-red hover:border-brand-red transition-all">
+            <a href="https://www.instagram.com/luismkt2026" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-brand-red hover:border-brand-red transition-all">
               <Instagram size={20} />
             </a>
-            <a href="mailto:gilmartinezl456@gmail.com" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-brand-red hover:border-brand-red transition-all">
+            <a href="mailto:luismkt2026@gmail.com" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-brand-red hover:border-brand-red transition-all">
               <Mail size={20} />
             </a>
             <a href="https://wa.me/34652426328" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-brand-red hover:border-brand-red transition-all">
