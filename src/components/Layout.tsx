@@ -27,6 +27,22 @@ const Header = () => {
     { name: 'Automatización (Bot)', path: '/servicios/automatizacion-bot' },
   ];
 
+  const NavLink = ({ to, children }: { to: string; children: React.ReactNode }) => {
+    const isActive = location.pathname === to;
+    return (
+      <Link to={to} className={`nav-link ${isActive ? 'text-brand-red font-bold' : ''}`}>
+        {children}
+        {isActive && (
+          <motion.div 
+            layoutId="nav-underline"
+            className="h-[2px] bg-brand-red mt-1 w-full"
+            transition={{ type: "spring", stiffness: 380, damping: 30 }}
+          />
+        )}
+      </Link>
+    );
+  };
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-sm py-4' : 'bg-white/80 backdrop-blur-md py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -41,24 +57,35 @@ const Header = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center space-x-8">
-          <Link to="/" className="nav-link">Home</Link>
-          <a href="https://tally.so/r/b5O1MZ" target="_blank" rel="noopener noreferrer" className="nav-link font-bold text-brand-red">Diagnóstico</a>
+        <nav className="hidden lg:flex items-center space-x-8">
+          <NavLink to="/">Home</NavLink>
+          <a 
+            href="https://tally.so/r/b5O1MZ" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="nav-link font-bold text-brand-red flex items-center gap-2"
+          >
+            Diagnóstico
+          </a>
           
           <div className="relative group" onMouseEnter={() => setShowServices(true)} onMouseLeave={() => setShowServices(false)}>
-            <button className="nav-link flex items-center gap-1 cursor-pointer">
-              Servicios <ChevronDown size={16} />
+            <button className={`nav-link flex items-center gap-1 cursor-pointer ${location.pathname.startsWith('/servicios') ? 'text-brand-red font-bold' : ''}`}>
+              Servicios <ChevronDown size={14} className={`transition-transform duration-300 ${showServices ? 'rotate-180' : ''}`} />
             </button>
             <AnimatePresence>
               {showServices && (
                 <motion.div 
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  className="absolute top-full left-0 w-64 bg-white shadow-xl border border-brand-gray mt-2 py-2"
+                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                  className="absolute top-full left-0 w-64 bg-white shadow-2xl border border-brand-gray mt-2 py-3 rounded-sm z-[60]"
                 >
                   {services.map((s) => (
-                    <Link key={s.path} to={s.path} className="block px-6 py-3 hover:bg-brand-gray text-brand-navy transition-colors">
+                    <Link 
+                      key={s.path} 
+                      to={s.path} 
+                      className={`block px-6 py-3 hover:bg-brand-gray text-brand-navy transition-colors text-sm font-medium ${location.pathname === s.path ? 'text-brand-red bg-brand-gray' : ''}`}
+                    >
                       {s.name}
                     </Link>
                   ))}
@@ -67,29 +94,33 @@ const Header = () => {
             </AnimatePresence>
           </div>
 
-          <Link to="/sobre-nosotros" className="nav-link">Sobre Nosotros</Link>
-          <Link to="/contacto" className="nav-link">Contacto</Link>
+          <NavLink to="/sobre-nosotros">Sobre Nosotros</NavLink>
+          <NavLink to="/contacto">Contacto</NavLink>
           
-          <div className="flex items-center gap-4 mr-2">
-            <a href="https://www.instagram.com/luismkt2026" target="_blank" rel="noopener noreferrer" className="text-brand-navy/70 hover:text-brand-red transition-colors">
-              <Instagram size={20} />
+          <div className="flex items-center gap-2 px-4 border-l border-brand-gray ml-2">
+            <a href="https://www.instagram.com/luismkt2026" target="_blank" rel="noopener noreferrer" title="Instagram" className="p-2 text-brand-navy/60 hover:text-brand-red hover:bg-brand-gray rounded-full transition-all">
+              <Instagram size={18} />
             </a>
-            <a href="mailto:luismkt2026@gmail.com" className="text-brand-navy/70 hover:text-brand-red transition-colors">
-              <Mail size={20} />
+            <a href="mailto:luismkt2026@gmail.com" title="Email" className="p-2 text-brand-navy/60 hover:text-brand-red hover:bg-brand-gray rounded-full transition-all">
+              <Mail size={18} />
             </a>
-            <a href="https://wa.me/34652426328" target="_blank" rel="noopener noreferrer" className="text-brand-navy/70 hover:text-brand-red transition-colors">
-              <MessageCircle size={20} />
+            <a href="https://wa.me/34652426328" target="_blank" rel="noopener noreferrer" title="WhatsApp" className="p-2 text-brand-navy/60 hover:text-brand-red hover:bg-brand-gray rounded-full transition-all">
+              <MessageCircle size={18} />
             </a>
           </div>
 
-          <a href="https://tally.so/r/b5O1MZ" target="_blank" rel="noopener noreferrer" className="cta-button text-sm">
+          <a href="https://tally.so/r/b5O1MZ" target="_blank" rel="noopener noreferrer" className="cta-button text-xs py-3 px-6">
             Solicitar diagnóstico
           </a>
         </nav>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden text-brand-navy" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        <button 
+          className="lg:hidden p-2 text-brand-navy hover:bg-brand-gray rounded-md transition-colors" 
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
@@ -97,27 +128,40 @@ const Header = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div 
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-brand-gray overflow-hidden"
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="fixed inset-0 top-[72px] lg:hidden bg-white z-40 overflow-y-auto"
           >
-            <div className="px-6 py-8 flex flex-col space-y-6">
-              <Link to="/" className="text-xl font-medium text-brand-navy">Home</Link>
-              <a href="https://tally.so/r/b5O1MZ" target="_blank" rel="noopener noreferrer" className="text-xl font-bold text-brand-red">Diagnóstico</a>
-              <div className="space-y-4 pl-4 border-l-2 border-brand-gray">
-                <p className="text-sm uppercase tracking-widest text-gray-400 font-bold">Servicios</p>
-                {services.map((s) => (
-                  <Link key={s.path} to={s.path} className="block text-lg text-brand-navy">
-                    {s.name}
-                  </Link>
-                ))}
+            <div className="px-6 py-10 flex flex-col space-y-8">
+              <Link to="/" className={`text-2xl font-bold ${location.pathname === '/' ? 'text-brand-red' : 'text-brand-navy'}`}>Home</Link>
+              <a href="https://tally.so/r/b5O1MZ" target="_blank" rel="noopener noreferrer" className="text-2xl font-bold text-brand-red">Diagnóstico</a>
+              
+              <div className="space-y-6">
+                <p className="text-xs uppercase tracking-[0.2em] text-gray-400 font-bold">Servicios</p>
+                <div className="grid grid-cols-1 gap-4 pl-4 border-l border-brand-gray">
+                  {services.map((s) => (
+                    <Link key={s.path} to={s.path} className={`text-lg font-medium ${location.pathname === s.path ? 'text-brand-red' : 'text-brand-navy/70'}`}>
+                      {s.name}
+                    </Link>
+                  ))}
+                </div>
               </div>
-              <Link to="/sobre-nosotros" className="text-xl font-medium text-brand-navy">Sobre Nosotros</Link>
-              <Link to="/contacto" className="text-xl font-medium text-brand-navy">Contacto</Link>
-              <a href="https://tally.so/r/b5O1MZ" target="_blank" rel="noopener noreferrer" className="cta-button w-full">
-                Solicitar diagnóstico
-              </a>
+
+              <Link to="/sobre-nosotros" className={`text-2xl font-bold ${location.pathname === '/sobre-nosotros' ? 'text-brand-red' : 'text-brand-navy'}`}>Sobre Nosotros</Link>
+              <Link to="/contacto" className={`text-2xl font-bold ${location.pathname === '/contacto' ? 'text-brand-red' : 'text-brand-navy'}`}>Contacto</Link>
+              
+              <div className="pt-8 border-t border-brand-gray">
+                <div className="flex gap-6 mb-8 text-brand-navy/60">
+                  <a href="https://www.instagram.com/luismkt2026" target="_blank" rel="noopener noreferrer"><Instagram size={24} /></a>
+                  <a href="mailto:luismkt2026@gmail.com"><Mail size={24} /></a>
+                  <a href="https://wa.me/34652426328" target="_blank" rel="noopener noreferrer"><MessageCircle size={24} /></a>
+                </div>
+                <a href="https://tally.so/r/b5O1MZ" target="_blank" rel="noopener noreferrer" className="cta-button w-full py-5 text-base">
+                  Solicitar diagnóstico gratuito
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
